@@ -55,6 +55,81 @@ The application provides user authentication, task management, protected routes,
 - Toast notifications
 - 404 Not Found page
 
+### How to Run the Project
+
+1. Clone the repository
+
+git clone https://github.com/sreelakshmips1611/task-tracker.git
+
+2. Open the project folder
+
+cd task-tracker
+
+3. Backend Setup
+
+cd backend
+
+Create and activate a virtual environment:
+
+python -m venv .venv
+
+Windows:
+.venv\Scripts\activate
+
+**Install the backend dependencies:**
+
+python -m pip install -r requirements.txt
+
+Create the environment file:
+
+copy .env.example .env
+
+Start the FastAPI server:
+
+python -m uvicorn app.main:app --reload
+
+Backend API:
+http://127.0.0.1:8000
+
+API Documentation:
+http://127.0.0.1:8000/docs
+
+
+4. Frontend Setup
+
+Open a new terminal and go to the project folder:
+
+cd task-tracker\frontend
+
+Install frontend dependencies:
+
+npm install
+
+Create the environment file:
+
+copy .env.example .env
+
+Start the frontend:
+
+npm run dev
+
+Frontend:
+http://localhost:5173
+
+
+5. Testing
+
+Backend tests:
+
+cd backend
+pytest -q
+
+Frontend tests:
+
+cd frontend
+npm test
+
+
 ##  Project Structure
 
 ```text
@@ -97,3 +172,4 @@ task-tracker/
 │   └── vite.config.js
 │
 └── .gitignore
+
