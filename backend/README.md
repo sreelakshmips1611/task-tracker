@@ -1,71 +1,38 @@
 # Task Tracker API
 
-FastAPI + SQLAlchemy + SQLite backend for the Task Tracker frontend assignment.
+FastAPI + SQLAlchemy + SQLite backend for the Task Tracker application.
 
 ## Features
+
 - JWT authentication
 - Password hashing
-- User/admin roles
+- User and admin roles
 - User registration and login
 - Current user profile
-- Admin user listing/deletion
-- Task CRUD
+- Admin user listing and deletion
+- Task CRUD operations
 - Users can access only their own tasks
 - Admins can access all tasks
-- Validation and clear API errors
-- CORS for the Vite frontend
+- Request validation and clear API errors
+- CORS support for the Vite frontend
+- SQLite database
 
-## Setup
+## Project Structure
 
-1. Create a virtual environment:
-
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-```
-
-2. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Copy `.env.example` to `.env` and change `JWT_SECRET` for a real submission.
-
-4. Run:
-
-```bash
-uvicorn app.main:app --reload --port 5000
-```
-
-API base URL: `http://localhost:5000/api`
-
-Health check: `http://localhost:5000/api/health`
-
-## Frontend
-
-Set the React project's `.env` to:
-
-```env
-VITE_API_URL=http://localhost:5000/api
-```
-
-Restart Vite after changing `.env`.
-
-## Tests
-
-```bash
-pytest -q
-```
-
-## Main endpoints
-
-- `POST /api/auth/register`
-- `POST /api/auth/login`
-- `GET /api/auth/me`
-- `GET /api/users` (admin)
-- `DELETE /api/users/{id}` (admin)
-- `POST /api/tasks`
-- `GET /api/tasks`
-- `PUT /api/tasks/{id}`
-- `DELETE /api/tasks/{id}`
+```text
+backend/
+├── app/
+│   ├── __init__.py
+│   ├── database.py
+│   ├── dependencies.py
+│   ├── main.py
+│   ├── models.py
+│   ├── schemas.py
+│   └── security.py
+├── tests/
+│   ├── test_api.py
+│   └── test_security.py
+├── .env.example
+├── .gitignore
+├── README.md
+└── requirements.txt
