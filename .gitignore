@@ -15,3 +15,5 @@ backend/.pytest_cache/
 # General
 *.log
 .DS_Store
+
+.venv/
